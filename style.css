@@ -1,0 +1,316 @@
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Headings */
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f0804d !important;
+}
+
+/* Navbar Styles */
+.navbar {
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+#socials a {
+    text-decoration: none;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1b1b1b;
+    color: #ccc;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 80px;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Publication Cards */
+.publication-card {
+    min-height: 250px;
+    background-color: var(--card-bg, #343a40);
+    color: var(--card-text-color, #fff);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.bg-dark {
+    background-color: #272935 !important;
+}
+
+body.bg-dark .publication-card {
+    --card-bg: #343a40;
+    --card-text-color: #fff;
+}
+
+body.bg-light .publication-card {
+    --card-bg: #f8f9fa;
+    --card-text-color: #343a40;
+}
+
+/* Publication List */
+.publications-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.publication-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Publication Links */
+.publication-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.publication-link:hover {
+    color: #f0804d !important;
+}
+
+.publication-authors {
+    font-size: 0.9rem; /* Slightly smaller font */
+    color: #6c757d; /* Gray color */
+}
+
+.publication-year {
+    font-size: 0.8rem; /* Slightly smaller font */
+    color: #6c757d; /* Gray color */
+}
+
+/* Button Styling */
+.btn-light {
+    background-color: #ffffff;
+    color: #343a40;
+    border: 1px solid #343a40;
+}
+
+body.bg-light .btn-light {
+    background-color: #343a40;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+body.bg-dark .btn-light {
+    background-color: #ffffff;
+    color: #343a40;
+    border: 1px solid #343a40;
+}
+
+/* Project Cards */
+.project-card img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.00);
+    opacity: 0.5;
+}
+
+.project-card .card-title {
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .card-title {
+    color: #f0804d !important;
+}
+
+/* Project Row */
+.project-row {
+    background-color: var(--card-bg, #212529);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Dark Mode Project Row */
+body.bg-dark .project-row {
+    --card-bg: #212529;
+}
+
+/* Light Mode Project Row */
+body.bg-light .project-row {
+    --card-bg: #f8f9fa;
+}
+
+/* Hover Effect for Project Row */
+body.bg-dark .project-row:hover,
+body.bg-light .project-row:hover {
+    background-color: var(--card-bg, #272935);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f0804d !important;
+}
+
+/* Links in Project Cards */
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card a:hover {
+    color: #f0804d !important;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 150px;
+    padding-left: 20px;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Timeline Content */
+.timeline-content {
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
+}
+
+.timeline-content .technologies-used {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.timeline-content h5 {
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    margin-bottom: 10px;
+}
+
+.timeline-content a {
+    color: #212529;
+    text-decoration: none;
+}
+
+.timeline-content a:hover {
+    text-decoration: underline;
+}
+
+/* Timeline Date and Icon */
+.timeline-content .timeline-date {
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-content .timeline-date i {
+    margin-right: 8px;
+}
+
+/* Dark Mode Timeline */
+body.bg-dark .timeline-content {
+    border-left: 2px solid rgb(221, 221, 221);
+}
+
+body.bg-dark .timeline-content h5 {
+    color: #ffffff;
+}
+
+body.bg-dark .timeline-content a {
+    color: #c7c7c7;
+}
+
+body.bg-dark .timeline-content .timeline-date {
+    color: #adb5bd;
+}
+
+body.bg-dark .timeline-content .timeline-date i {
+    color: #adb5bd;
+}
+
+/* Timeline Point Removal */
+.timeline-point {
+    display: none;
+}
+
+/* Timeline Item Adjustments */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+/* Timeline Icon */
+.timeline-icon {
+    position: absolute;
+    left: -75px;
+    width: 60px;
+    height: 60px;
+}
+
+.company-logo {
+    width: 100%;
+    height: auto;
+    border-radius: 0%;
+}
+
+/* Work Experience Section */
+#work-experience {
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin-top: 90px;
+}
+
+/* Dark Mode Work Experience */
+body.bg-dark #work-experience {
+    background-color: #272935;
+    color: #f8f9fa;
+}

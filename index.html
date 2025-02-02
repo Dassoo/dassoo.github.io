@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federico Dassiè</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome CDN for social media icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- Navbar Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Left-aligned Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#work-experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#" id="downloadCVBtn">CV</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Light Mode Toggle Button, aligned right -->
+            <button class="btn btn-light" id="lightModeToggle">
+                <i class="fas fa-sun"></i> Light Mode
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="container pt-5 mt-5">
+        <section class="intro text-center mb-5">
+            <img src="assets/profile.jpg" alt="Profile Picture" class="rounded-circle mb-3" style="width: 150px; height: 150px; margin-top: 20px; object-fit: cover;">
+            <h1 class="display-4 mb-3">Federico Dassiè</h1>
+            <p class="lead mb-3">Research Fellow at the <a href="https://ccht.iit.it/" class="text-light">Center for Cultural Heritage Technology (CCHT-IIT)</a>, Venice</p>
+            <p class="mb-4">Interested in AI, Robotics, and Humanities</p>
+        </section>
+
+        <!-- Social Icons Section -->
+        <section id="socials" class="text-center mb-5">
+            <div>
+                <a href="https://linkedin.com/in/federico-dassiè" class="text-light mx-3" style="font-size: 2rem;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/federico-dassie" class="text-light mx-3" style="font-size: 2rem;">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=O4_9Fc0AAAAJ&hl=it&oi=ao" class="text-light mx-3" style="font-size: 2rem;">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="mailto:federico.dassie@gmail.com" class="text-light mx-3" style="font-size: 2rem;">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="text-center mb-5">
+            <p>I see myself as a Digital Humanist, one who has two great passions, Computer Science and History, and is able to master the tools necessary to achieve important results in the interdisciplinarity of the two fields. Obsessed over getting daily information about anything, from the ordinary to more complex things, I'm also a good and constant reader.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-5 mb-5">
+            <div class="container">
+                <h2 class="h2 text-center mb-4">Projects</h2>
+                <div class="row">
+                    <div class="col-md-4 col-12 mb-4 d-flex align-items-stretch">
+                        <div class="card shadow-sm project-card h-100">
+                            <a href="https://cte.comune.genova.it/" target="_blank">
+                                <img src="assets/CTE-opificio.jpg" class="card-img-top" alt="CTE-Genova">
+                            </a>
+                            <div class="card-body d-flex flex-column project-row">
+                                <h5 class="card-title fw-bold">CTE-Genova</h5>
+                                <p class="card-text">A project exploring the integration of 3D scanning and reconstruction with robotic systems for autonomous operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 mb-4 d-flex align-items-stretch">
+                        <div class="card shadow-sm project-card h-100">
+                            <a href="https://github.com/Dassoo/PyCrop" target="_blank">
+                                <img src="assets/pycrop.jpg" class="card-img-top" alt="PyCrop">
+                            </a>
+                            <div class="card-body d-flex flex-column project-row">
+                                <h5 class="card-title fw-bold">PyCrop</h5>
+                                <p class="card-text">Image post-production app, including features like image conversion, object detection and cropping, quality compression, and white balancing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 mb-4 d-flex align-items-stretch">
+                        <div class="card shadow-sm project-card h-100">
+                            <a href="https://www.unive.it/pag/44465/" target="_blank">
+                                <img src="assets/ccls.png" class="card-img-top" alt="IconticonlaStoria">
+                            </a>
+                            <div class="card-body d-flex flex-column project-row">
+                                <h5 class="card-title fw-bold">I Conti con la Storia</h5>
+                                <p class="card-text">Research project exploring Italy's racial laws through public television, combining a scholarly paper and a web documentary to analyze historical narratives from fascism to the present.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="mb-5">
+            <h2 class="h2 text-center mb-4">Publications</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h5 class="fw-bold"><a href="#" class="publication-link" target="_blank">Coming soon!</a></h5>
+                    <p class="publication-authors"><strong>Authors:</strong> ---</p>
+                    <p>Soon to be published (March 2025)</p>
+                    <span class="publication-year">2025</span>
+                </div>
+
+                <div class="publication-item">
+                    <h5 class="fw-bold"><a href="https://ieeexplore.ieee.org/document/10704902" class="publication-link" target="_blank">AAPOE: Automated Artifacts Position and Orientation Estimation in Cultural Heritage</a></h5>
+                    <p class="publication-authors"><strong>Authors:</strong> Javed Ahmad; Selene Frascella; Federico Dassiè et al.</p>
+                    <p>This paper presents a novel approach for estimating the position and orientation of artifacts in cultural heritage using automated systems.</p>
+                    <span class="publication-year">2025</span>
+                </div>
+                
+                <div class="publication-item">
+                    <h5 class="fw-bold"><a href="http://dspace.unive.it/handle/10579/22604" class="publication-link" target="_blank">Machine Learning and Computer Vision in the Humanities</a></h5>
+                    <p class="publication-authors"><strong>Authors:</strong> Federico Dassiè</p>
+                    <p>Exploring the intersection of machine learning and computer vision to advance research in the humanities.</p>
+                    <span class="publication-year">2022</span>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- Work Experience Section -->
+        <section id="work-experience" class="py-5 mb-5">
+            <h2 class="h2 text-center mb-4">Work Experience</h2>
+            <div class="container">
+                <div class="timeline">
+                    <!-- Job 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="assets/ccht.png" alt="Company 1" class="company-logo">
+                        </div>
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-bold">Research Fellow at the Center for Cultural Heritage Technology (CCHT-IIT), Venice</h5>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar-alt"></i> March 2024 - Present
+                            </span>
+                            <p>Researcher and Python Developer, working on AI and robotics applied to cultural heritage projects.</p>
+                            <p class="technologies-used"><strong>Technologies used:</strong> Python, Robotics (UR, Robotiq), COLMAP, NerF/Gaussian Splatting, 3D Scanners and cameras (Artec, Polyga, Intel Realsense, Zivid), Genesis</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Job 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <img src="assets/fgc.png" alt="Company 1" class="company-logo">
+                        </div>
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-bold">Junior Python Developer at Fondazione Giorgio Cini, Venice</h5>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar-alt"></i> 2022 - 2024
+                            </span>
+                            <p>Development and maintenance of automation pipelines for image postproduction, involving Computer Vision and Machine Learning.</p>
+                            <p class="technologies-used"><strong>Technologies used:</strong> Python, Pytorch, Detectron2, OpenCV, Leaflet, Adobe Lightroom, RawTherapee, Canon cameras</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center py-4">
+        <p>&copy; 2025 Federico Dassiè. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Dark/Light mode JS -->
+    <script src="switch_mode.js"></script>
+
+</body>
+</html>
