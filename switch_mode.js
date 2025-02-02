@@ -38,7 +38,7 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 
 lightModeToggle.addEventListener('click', () => {
     if (isLightMode) {
-        // Switch to Dark Mode
+        // Passa alla modalità scura
         document.body.classList.remove('bg-light', 'text-dark');
         document.body.classList.add('bg-dark', 'text-white');
         document.querySelectorAll('.navbar').forEach(navbar => {
@@ -57,12 +57,19 @@ lightModeToggle.addEventListener('click', () => {
             link.classList.remove('text-dark');
             link.classList.add('text-light');
         });
+
+        // Cambia lo stile della sezione "pinned" per la modalità scura
+        document.querySelectorAll('.pinned').forEach(item => {
+            item.classList.remove('bg-light');
+            item.classList.add('bg-dark');
+        });
+
         lightModeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
         lightModeToggle.classList.remove('btn-dark');
         lightModeToggle.classList.add('btn-light');
         isLightMode = false;
     } else {
-        // Switch to Light Mode
+        // Passa alla modalità chiara
         document.body.classList.remove('bg-dark', 'text-white');
         document.body.classList.add('bg-light', 'text-dark');
         document.querySelectorAll('.navbar').forEach(navbar => {
@@ -81,12 +88,20 @@ lightModeToggle.addEventListener('click', () => {
             link.classList.remove('text-light');
             link.classList.add('text-dark');
         });
+
+        // Cambia lo stile della sezione "pinned" per la modalità chiara
+        document.querySelectorAll('.pinned').forEach(item => {
+            item.classList.remove('bg-dark');
+            item.classList.add('bg-light');
+        });
+
         lightModeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
         lightModeToggle.classList.remove('btn-light');
         lightModeToggle.classList.add('btn-dark');
         isLightMode = true;
     }
 });
+
 
 // Funzione per scaricare entrambi i documenti
 document.getElementById("downloadCVBtn").addEventListener("click", function(event) {
@@ -103,4 +118,19 @@ document.getElementById("downloadCVBtn").addEventListener("click", function(even
     cv2Link.href = 'assets/Federico Dassiè - CV_en.pdf'; // Percorso del secondo CV
     cv2Link.download = 'Federico Dassiè - CV_en.pdf'; // Nome del file per il secondo CV
     cv2Link.click(); // Simula il click per il download del secondo CV
+});
+
+// Contenuti pinnati
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("pinned.json")
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById("pinned-list");
+            data.pinned.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a> - ${item.comment}`;
+                list.appendChild(li);
+            });
+        })
+        .catch(error => console.error("Error loading pinned items:", error));
 });

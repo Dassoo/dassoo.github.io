@@ -41,6 +41,105 @@ a:hover {
     text-decoration: none;
 }
 
+/* Pinned Content Styles */
+.pinned {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1e1e1e; /* Modalità scura */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    color: #fff; /* Testo bianco in modalità scura */
+}
+
+.pinned a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Modalità chiara */
+body.bg-light .pinned {
+    background-color: #f8f9fa; /* Colore di sfondo chiaro */
+    border: 1px solid #ddd; /* Colore del bordo in modalità chiara */
+    color: #212529; /* Testo scuro in modalità chiara */
+}
+
+.pinned:hover {
+    background-color: #333;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pinned h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: inline-flex; /* Important for aligning with the badge */
+    align-items: center;  /* Vertically aligns the badge with the title */
+}
+
+#pinned-list {
+    list-style: none;
+    padding: 0;
+}
+
+#pinned-list li {
+    margin-bottom: 8px;
+}
+
+#pinned-list li a {
+    color: #1e90ff;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#pinned-list li a:hover {
+    color: #ff6347;
+}
+
+/* Dark mode links in pinned content */
+body.bg-dark .pinned a {
+    color: #1e90ff !important; /* Light blue for dark mode */
+}
+
+body.bg-dark .pinned a:hover {
+    color: #ff6347 !important; /* Hover effect color for dark mode */
+}
+
+/* Light mode links in pinned content */
+body.bg-light .pinned a {
+    color: #007bff !important; /* Blue for light mode */
+}
+
+body.bg-light .pinned a:hover {
+    color: #ff6347 !important; /* Hover effect color for light mode */
+}
+
+/* New badge style */
+.new-badge {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 0.9em;
+    border-radius: 12px;
+    margin-left: 10px;
+    animation: blink 1.5s ease-in-out infinite;
+}
+
+/* Animation to make the "New!" badge blink */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Footer Styles */
 .footer {
     background-color: #1b1b1b;
