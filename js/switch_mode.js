@@ -101,36 +101,3 @@ lightModeToggle.addEventListener('click', () => {
         isLightMode = true;
     }
 });
-
-
-// Funzione per scaricare entrambi i documenti
-document.getElementById("downloadCVBtn").addEventListener("click", function(event) {
-    event.preventDefault(); // Previene il comportamento di default del link
-
-    // CV_it
-    const cv1Link = document.createElement('a');
-    cv1Link.href = 'assets/Federico Dassiè - CV_it.pdf'; // Percorso del primo CV
-    cv1Link.download = 'Federico Dassiè - CV_it.pdf'; // Nome del file per il primo CV
-    cv1Link.click(); // Simula il click per il download del primo CV
-
-    // CV_en
-    const cv2Link = document.createElement('a');
-    cv2Link.href = 'assets/Federico Dassiè - CV_en.pdf'; // Percorso del secondo CV
-    cv2Link.download = 'Federico Dassiè - CV_en.pdf'; // Nome del file per il secondo CV
-    cv2Link.click(); // Simula il click per il download del secondo CV
-});
-
-// Contenuti pinnati
-document.addEventListener("DOMContentLoaded", function() {
-    fetch("pinned.json")
-        .then(response => response.json())
-        .then(data => {
-            const list = document.getElementById("pinned-list");
-            data.pinned.forEach(item => {
-                const li = document.createElement("li");
-                li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a> - ${item.comment}`;
-                list.appendChild(li);
-            });
-        })
-        .catch(error => console.error("Error loading pinned items:", error));
-});

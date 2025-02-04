@@ -46,16 +46,34 @@ body.bg-dark .navbar {
     text-decoration: none;
 }
 
+/* Particles */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Lo manda in background */
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+}
+
 /* Pinned Content Styles */
 .pinned {
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #444;
     border-radius: 8px;
-    background-color: #1e1e1e; /* Modalità scura */
+    background-color: #1e1e1e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    color: #fff; /* Testo bianco in modalità scura */
+    color: #fff;
 }
 
 .pinned a {
@@ -66,9 +84,9 @@ body.bg-dark .navbar {
 
 /* Modalità chiara */
 body.bg-light .pinned {
-    background-color: #f8f9fa; /* Colore di sfondo chiaro */
-    border: 1px solid #ddd; /* Colore del bordo in modalità chiara */
-    color: #212529; /* Testo scuro in modalità chiara */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #212529;
 }
 
 .pinned:hover {
@@ -79,8 +97,8 @@ body.bg-light .pinned {
 .pinned h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    display: inline-flex; /* Important for aligning with the badge */
-    align-items: center;  /* Vertically aligns the badge with the title */
+    display: inline-flex;
+    align-items: center;
 }
 
 #pinned-list {
@@ -105,20 +123,20 @@ body.bg-light .pinned {
 
 /* Dark mode links in pinned content */
 body.bg-dark .pinned a {
-    color: #1e90ff !important; /* Light blue for dark mode */
+    color: #1e90ff !important;
 }
 
 body.bg-dark .pinned a:hover {
-    color: #ff6347 !important; /* Hover effect color for dark mode */
+    color: #ff6347 !important;
 }
 
 /* Light mode links in pinned content */
 body.bg-light .pinned a {
-    color: #007bff !important; /* Blue for light mode */
+    color: #007bff !important;
 }
 
 body.bg-light .pinned a:hover {
-    color: #ff6347 !important; /* Hover effect color for light mode */
+    color: #ff6347 !important;
 }
 
 /* New badge style */
@@ -216,13 +234,13 @@ body.bg-light .publication-card {
 }
 
 .publication-authors {
-    font-size: 0.9rem; /* Slightly smaller font */
-    color: #6c757d; /* Gray color */
+    font-size: 0.9rem;
+    color: #6c757d;
 }
 
 .publication-year {
-    font-size: 0.8rem; /* Slightly smaller font */
-    color: #6c757d; /* Gray color */
+    font-size: 0.8rem;
+    color: #6c757d;
 }
 
 /* Button Styling */
