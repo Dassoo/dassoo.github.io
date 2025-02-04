@@ -401,6 +401,10 @@ body.bg-dark .timeline-content .timeline-date i {
     border-radius: 0%;
 }
 
+body.bg-dark .company-logo {
+    filter: invert(1);
+}
+
 /* Work Experience Section */
 #work-experience {
     background-color: #f8f9fa;
