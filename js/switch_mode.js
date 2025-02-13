@@ -101,3 +101,30 @@ lightModeToggle.addEventListener('click', () => {
         isLightMode = true;
     }
 });
+
+
+// Funzione per scaricare i CV
+document.getElementById("downloadCVBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const cv1Link = document.createElement('a');
+    if (isLightMode) {
+        cv1Link.href = 'assets/cvs/Federico Dassiè - CV_it_w.pdf';
+        cv1Link.download = 'Federico Dassiè - CV_it_w.pdf';
+        cv1Link.click();
+
+        const cv2Link = document.createElement('a');
+        cv2Link.href = 'assets/cvs/Federico Dassiè - CV_en_w.pdf';
+        cv2Link.download = 'Federico Dassiè - CV_en_w.pdf';
+        cv2Link.click();
+    } else {
+        cv1Link.href = 'assets/cvs/Federico Dassiè - CV_it_b.pdf';
+        cv1Link.download = 'Federico Dassiè - CV_it_b.pdf';
+        cv1Link.click();
+
+        const cv2Link = document.createElement('a');
+        cv2Link.href = 'assets/cvs/Federico Dassiè - CV_en_b.pdf';
+        cv2Link.download = 'Federico Dassiè - CV_en_b.pdf';
+        cv2Link.click();
+    }
+});
