@@ -210,19 +210,13 @@ main {
 }
 
 /* Projects no scroll (temp) */
-.scrollbar-thin {
-  scrollbar-width: thin;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-.scrollbar-thin::-webkit-scrollbar {
-  width: 8px;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-}
-
 
 /* Navbar Links */
 .navbar-nav .nav-link {

@@ -37,9 +37,7 @@ const typed = new Typed('#interests-text', {
   loop: true,
 });
 
-
-
-
+// Socials animation
 document.querySelectorAll('.social-icon').forEach(icon => {
     icon.addEventListener('mouseenter', (e) => {
       // POP animation
@@ -73,5 +71,18 @@ document.querySelectorAll('.social-icon').forEach(icon => {
     });
 });
 
+// Horizontal scrolling for projects section
+document.addEventListener('DOMContentLoaded', function () {
+  const scroller = document.querySelector('#projects .overflow-x-auto');
+  scroller.addEventListener('wheel', function (e) {
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      scroller.scrollBy({
+        left: e.deltaY < 0 ? -100 : 100,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
 
