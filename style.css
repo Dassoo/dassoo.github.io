@@ -209,17 +209,19 @@ main {
   color: #6c757d;
 }
 
-/* Projects scroll */
-.scrollbar-thin::-webkit-scrollbar {
-  height: 8px;
+/* Projects no scroll (temp) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 4px;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
+.scroll-on-hover {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
 
 /* Navbar Links */
 .navbar-nav .nav-link {
