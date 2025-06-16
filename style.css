@@ -209,7 +209,7 @@ main {
   color: #6c757d;
 }
 
-/* Projects Scroll */
+/* Projects no scroll (temp) */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
