@@ -210,16 +210,17 @@ main {
 }
 
 /* Projects no scroll (temp) */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+.scrollbar-thin {
+  scrollbar-width: thin;
 }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
 }
-.scroll-on-hover {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border-radius: 10px;
 }
 
 
