@@ -1,235 +1,351 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federico Dassiè</title>
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Federico Dassiè</title>
 
-    <!-- Font Awesome CDN for social media icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-dark text-white">
 
-    <div id="particles-js"></div>
+<body class="text-white font-sans min-h-screen flex flex-col">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <!-- Navbar Toggler for Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <!-- Particles background -->
+  <div id="particles-js" class="fixed inset-0 -z-10"></div>
 
-            <!-- Left-aligned Navigation Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2" href="#publications">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2" href="#work-experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2" href="#" id="downloadCVBtn">CV</a>
-                    </li>
-                </ul>
-            </div>
+  <!-- Navbar -->
+  <nav
+    class="fixed top-0 left-0 w-full bg-opacity-95 backdrop-blur-sm shadow-md z-50"
+    aria-label="Primary Navigation"
+  >
+    <div class="container mx-auto flex items-center justify-center">
+      <!-- Nav Links (hidden on mobile) -->
+      <div
+        id="navbar-links"
+        class="hidden lg:flex text-gray-300 font-medium"
+      >
+        <a href="#" class="px-8 py-2 border-r border-gray-700 transition">Home</a>
+        <a href="#projects" class="px-8 py-2 border-r border-gray-700 transition">Projects</a>
+        <a href="#publications" class="px-8 py-2 transition">Publications</a>
+        <a href="#work-experience" class="px-8 py-2 border-l border-gray-700 transition">Experience</a>
+        <a href="#" id="downloadCVBtn" class="px-8 py-2 border-l border-gray-700 transition">CV</a>
+      </div>
 
-            <!-- Light Mode Toggle Button, aligned right -->
-            <button class="btn btn-light" id="lightModeToggle">
-                <i class="fas fa-sun"></i> Light Mode
-            </button>
+      <!-- Mobile menu button -->
+      <button
+        id="navbar-toggle"
+        class="lg:hidden ml-4 text-gray-300 hover:text-white focus:outline-none"
+        aria-label="Toggle navigation menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Links (hidden by default) -->
+    <div
+      id="mobile-menu"
+      class="hidden lg:hidden bg-gray-800 bg-opacity-90 backdrop-blur-sm"
+    >
+      <div class="flex flex-col space-y-2 px-4 py-3 text-gray-300 hover:text-pink-500 font-medium">
+        <a href="#" class="transition py-1">Home</a>
+        <a href="#projects" class="transition py-1">Projects</a>
+        <a href="#publications" class="transition py-1">Publications</a>
+        <a href="#work-experience" class="transition py-1">Experience</a>
+        <a href="#" id="downloadCVBtnMobile" class="transition py-1">CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 pt-27 flex-grow">
+
+    <!-- Hero Header Section -->
+    <section class="relative w-full max-w-6xl mx-auto pt-16 pb-16 px-6 flex flex-col lg:flex-row items-center justify-center gap-12 text-center lg:text-left">
+    <!-- Profile Image -->
+    <div class="flex-shrink-0">
+        <img
+        src="assets/profile.jpg"
+        alt="Federico Dassiè"
+        class="rounded-full object-cover shadow-lg border-2 border-blue-500"
+        style="width: 180px; height: 180px;"
+        />
+    </div>
+
+    <!-- Text and Name -->
+    <div class="flex flex-col items-center lg:items-start max-w-2xl">
+        <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-3 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+        Federico Dassiè
+        </h1>
+        <p class="text-lg text-gray-300 font-medium">
+        Researcher and developer active in research on automated artifact scanning and intelligent data analysis. Passionate about innovative technological solutions at the intersection of humanities and engineering. 
+        </p>
+        <div class="mt-4 text-base text-gray-400">
+        <span>Interested in </span><span id="interests-text" class="font-semibold text-white"></span><span id="cursor" class="animate-pulse"></span>
         </div>
-    </nav>
+    </div>
 
-    <!-- Main content -->
-    <main class="container pt-5 mt-5">
-        <section class="intro text-center mb-5">
-            <img src="assets/profile.jpg" alt="Profile Picture" class="rounded-circle mb-3" style="width: 150px; height: 150px; margin-top: 25px; object-fit: cover;">
-            <h1 class="display-4 mb-3">Federico Dassiè</h1>
-            <p class="lead mb-3">Research Fellow at the <a href="https://ccht.iit.it/" class="text-light">Center for Cultural Heritage Technology (CCHT-IIT)</a>, Venice</p>
-            <p class="mb-4">Interested in AI, Computer Vision, Robotics, and Humanities</p>
-        </section>
+    </section>
 
-        <!-- Social Icons Section -->
-        <section id="socials" class="text-center mb-5">
-            <div>
-                <a href="https://linkedin.com/in/federico-dassiè" class="text-light mx-3" style="font-size: 2rem;">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/Dassoo" class="text-light mx-3" style="font-size: 2rem;">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://scholar.google.com/citations?user=O4_9Fc0AAAAJ&hl=it&oi=ao" class="text-light mx-3" style="font-size: 2rem;">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-                <a href="mailto:federico.dassie@gmail.com" class="text-light mx-3" style="font-size: 2rem;">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="text-center mb-5">
-            <p>I see myself as a Programmer and Digital Humanist, one who has two great passions, Computer Science and History, and is able to master the tools necessary to achieve important results in the interdisciplinarity of the two fields. Obsessed over getting daily information about anything, from the ordinary to more complex things, I'm also a good and constant reader.</p>
-        </section>
-
-        <div id="pinned-section" class="pinned">
-            <h2>Pinned Content <span class="new-badge">New!</span></h2>
-            <ul id="pinned-list"></ul>
+    <!-- Social Icons -->
+    <section id="socials" class="mb-14 flex justify-center">
+        <div class="flex space-x-10 text-4xl text-gray-300 bg-gray-800 rounded-full p-2 pl-10 pr-10 shadow-lg border border-gray-700">
+            <a
+            href="https://linkedin.com/in/federico-dassiè"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="transition social-icon"
+            >
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+            href="https://github.com/Dassoo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="transition social-icon"
+            >
+            <i class="fab fa-github"></i>
+            </a>
+            <a
+            href="https://scholar.google.com/citations?user=O4_9Fc0AAAAJ&hl=it&oi=ao"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Scholar"
+            class="transition social-icon"
+            >
+            <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a
+            href="mailto:federico.dassie@gmail.com"
+            aria-label="Email"
+            class="transition social-icon"
+            >
+            <i class="fas fa-envelope"></i>
+            </a>
         </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-5 mb-5">
-            <div class="container">
-                <h2 class="h2 text-center mb-4">Projects</h2>
-                <div class="row">
-                    <div class="col-md-4 col-12 mb-4 d-flex align-items-stretch">
-                        <div class="card shadow-sm project-card h-100">
-                            <a href="https://cte.comune.genova.it/" target="_blank">
-                                <img src="assets/CTE-opificio.jpg" class="card-img-top" alt="CTE-Genova">
-                            </a>
-                            <div class="card-body d-flex flex-column project-row">
-                                <h5 class="card-title fw-bold">CTE-Genova</h5>
-                                <p class="card-text">A project exploring the integration of 3D scanning and reconstruction with robotic systems for autonomous operations.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12 mb-4 d-flex align-items-stretch">
-                        <div class="card shadow-sm project-card h-100">
-                            <a href="https://github.com/Dassoo/PyCrop" target="_blank">
-                                <img src="assets/pycrop.jpg" class="card-img-top" alt="PyCrop">
-                            </a>
-                            <div class="card-body d-flex flex-column project-row">
-                                <h5 class="card-title fw-bold">PyCrop</h5>
-                                <p class="card-text">Image post-production app, including features like image conversion, object detection and cropping, quality compression, and white balancing.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12 mb-4 d-flex align-items-stretch">
-                        <div class="card shadow-sm project-card h-100">
-                            <a href="https://www.unive.it/pag/44465/" target="_blank">
-                                <img src="assets/ccls.png" class="card-img-top" alt="IconticonlaStoria">
-                            </a>
-                            <div class="card-body d-flex flex-column project-row">
-                                <h5 class="card-title fw-bold">I Conti con la Storia</h5>
-                                <p class="card-text">Research project exploring Italy's racial laws through public television, combining a scholarly paper and a web documentary to analyze historical narratives from fascism to the present.</p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- About Section -->
+    <section id="about" class="max-w-4xl text-center mx-auto mb-16 space-y-6 text-gray-300 leading-relaxed">
+      <p>
+        Proficient in Python, image processing, 3D reconstruction (SfM, NerF, Gaussian Splatting), and AI frameworks.
+        Actually studying and leveraging the potential of LLMs and RAGs in cultural heritage, with a focus on automating data analysis through the latest and powerful tools and libraries.
+      </p>
+    </section>
+
+    <!-- Pinned Section -->
+    <section id="pinned-section" class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-3xl font-semibold mt-32 mb-6 flex items-center gap-3 justify-center">
+        Pinned Content
+        <span
+          class="bg-pink-700 text-white text-xs px-2 py-1 rounded-full font-semibold animate-pulse"
+          >New!</span
+        >
+      </h2>
+      <ul id="pinned-list" class="list-disc list-inside space-y-2 text-gray-300 bg-gray-800 shadow-lg border border-gray-700 p-3 rounded-lg"></ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="mb-24 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-semibold text-center mb-12">Projects</h2>
+
+        <div class="overflow-x-auto no-scrollbar">
+            <div class="flex space-x-6 pb-4">
+            
+            <!-- Project Panel -->
+            <div class="max-w-[300px] hover:animate-pulse bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-100 flex-shrink-0">
+                <a href="https://cte.comune.genova.it/" target="_blank" class="block">
+                <img src="assets/CTE-opificio.jpg" alt="CTE-Genova" class="rounded-t-xl w-full h-48 object-cover" />
+                </a>
+                <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-2">CTE-Genova</h3>
+                <p class="text-gray-300 text-sm">
+                    Integration of 3D scanning and robotic systems for autonomous operations in digital heritage.
+                </p>
                 </div>
             </div>
-        </section>
 
-        <!-- Publications Section -->
-        <section id="publications" class="mb-5">
-            <h2 class="h2 text-center mb-4">Publications</h2>
-            <div class="publications-list">
-
-                <div class="publication-item">
-                    <h5 class="fw-bold"><a href="#" class="publication-link" target="_blank">DARS: A Dual-Arm Robotic System for Autonomous 3D Artifacts Scanning</a></h5>
-                    <p class="publication-authors"><strong>Authors:</strong> J. Ahmad; F. Dassiè; S. Frascella; F. Cannella et al.</p>
-                    <p>A fully autonomous 3D scanning system using dual-arm robotics is proposed to preserve cultural heritage artifacts. It optimizes scanning trajectories and reduces reliance on expert operators, achieving superior shape accuracy and efficiency compared to previous methods.</p>
-                    <span class="publication-year">2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (IROS 2025)</span>
-                </div>
-
-                <div class="publication-item">
-                    <h5 class="fw-bold"><a href="#" class="publication-link" target="_blank">Coming soon!</a></h5>
-                    <p class="publication-authors"><strong>Authors:</strong> ---</p>
-                    <p>Soon to be published - Hyperspectral imaging analysis through robotic acquisition</p>
-                    <span class="publication-year">2025</span>
-                </div>
-
-                <div class="publication-item">
-                    <h5 class="fw-bold"><a href="https://ieeexplore.ieee.org/document/10704902" class="publication-link" target="_blank">AAPOE: Automated Artifacts Position and Orientation Estimation in Cultural Heritage</a></h5>
-                    <p class="publication-authors"><strong>Authors:</strong> J. Ahmad; S. Frascella; F. Dassiè et al.</p>
-                    <p>This paper presents a novel approach for estimating the position and orientation of artifacts in cultural heritage using automated systems.</p>
-                    <span class="publication-year">2024 20th IEEE/ASME International Conference on Mechatronic and Embedded Systems and Applications (MESA)</span>
-                </div>
-                
-                <div class="publication-item">
-                    <h5 class="fw-bold"><a href="http://dspace.unive.it/handle/10579/22604" class="publication-link" target="_blank">Machine Learning and Computer Vision in the Humanities</a></h5>
-                    <p class="publication-authors"><strong>Authors:</strong> F. Dassiè</p>
-                    <p>Exploring the intersection of machine learning and computer vision to advance research in the humanities.</p>
-                    <span class="publication-year">Università Ca' Foscari Venezia, 2022</span>
-                </div>
-                
-            </div>
-        </section>
-        
-        <!-- Work Experience Section -->
-        <section id="work-experience" class="py-5 mb-5">
-            <h2 class="h2 text-center mb-4">Work Experience</h2>
-            <div class="container">
-                <div class="timeline">
-                    <!-- Job 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <img src="assets/ccht.png" alt="CCHT" class="company-logo">
-                        </div>
-                        <div class="timeline-point"></div>
-                        <div class="timeline-content">
-                            <h5 class="fw-bold">Research Fellow at the Center for Cultural Heritage Technology (CCHT-IIT), Venice</h5>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> March 2024 - Present
-                            </span>
-                            <p>Researcher and Python Developer, working on Computer Vision and Robotics applied to Cultural Heritage projects.</p>
-                            <p class="technologies-used"><strong>Technologies used:</strong> Python, Robotics (UR, Robotiq), COLMAP, NerF/Gaussian Splatting, 3D Scanners and cameras (Artec, Polyga, Intel Realsense, Zivid), Genesis</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Job 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <img src="assets/fgc.png" alt="FGC" class="company-logo">
-                        </div>
-                        <div class="timeline-point"></div>
-                        <div class="timeline-content">
-                            <h5 class="fw-bold">Junior Python Developer at Fondazione Giorgio Cini, Venice</h5>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> 2022 - 2024
-                            </span>
-                            <p>Development and maintenance of automation pipelines for image postproduction, involving Computer Vision and Machine Learning.</p>
-                            <p class="technologies-used"><strong>Technologies used:</strong> Python, Pytorch, Detectron2, OpenCV, Leaflet, Adobe Lightroom, RawTherapee, Canon cameras</p>
-                        </div>
-                    </div>
-                    
+            <!-- Project Panel -->
+            <div class="max-w-[300px] hover:animate-pulse bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-100 flex-shrink-0">
+                <a href="https://github.com/Dassoo/PyCrop" target="_blank" class="block">
+                <img src="assets/pycrop.jpg" alt="PyCrop" class="rounded-t-xl w-full h-48 object-cover" />
+                </a>
+                <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-2">PyCrop</h3>
+                <p class="text-gray-300 text-sm">
+                    Image post-processing app with object detection, cropping, compression, and white balancing.
+                </p>
                 </div>
             </div>
-        </section>
 
-    </main>
+            <!-- Project Panel -->
+            <div class="max-w-[300px] hover:animate-pulse bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-100 flex-shrink-0">
+                <a href="https://www.unive.it/pag/44465/" target="_blank" class="block">
+                <img src="assets/ccls.png" alt="IconticonlaStoria" class="rounded-t-xl w-full h-48 object-cover" />
+                </a>
+                <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-2">I Conti con la Storia</h3>
+                <p class="text-gray-300 text-sm">
+                    Research on Italy’s racial laws in media, combining scholarly study and web documentary formats.
+                </p>
+                </div>
+            </div>
 
-    <!-- Footer Section -->
-    <footer class="footer text-center py-4">
-        <p>&copy; 2025 Federico Dassiè. All rights reserved.</p>
-    </footer>
+            <!-- Project Panel -->
+            <div class="max-w-[300px] hover:animate-pulse bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-100 flex-shrink-0">
+                <a href="https://www.unive.it/pag/44465/" target="_blank" class="block">
+                <img src="assets/ccls.png" alt="IconticonlaStoria" class="rounded-t-xl w-full h-48 object-cover" />
+                </a>
+                <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-2">Placeholder</h3>
+                <p class="text-gray-300 text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                </div>
+            </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+            </div>
+        </div>
+    </section>
 
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Publications Section -->
+    <section id="publications" class="max-w-5xl mx-auto mb-20">
+        <h2 class="text-3xl font-semibold text-center mb-10">Publications</h2>
 
-    <!-- Other JS imports -->
-    <script src="js/switch_mode.js"></script>
-    <script src="js/docs.js"></script>
-    <script src="js/pins.js"></script>
-    <script src="js/particles_settings.js"></script>
+        <div class="space-y-2 divide-y divide-gray-700 text-sm text-gray-300">
+            
+            <!-- Publication item -->
+            <div class="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+            <div class="flex-1">
+                <a href="https://javi-99.github.io/DARS/" target="_blank" class="text-pink-500 font-semibold">
+                DARS: A Dual-Arm Robotic System for Autonomous 3D Artifacts Scanning
+                </a>
+                <div class="text-white-400">J. Ahmad, F. Dassiè, S. Frascella, F. Cannella et al. – <span class="italic"> (submitted to) IROS 2025</span></div>
+                <p class="text-gray-400 hidden md:block">
+                A fully autonomous 3D scanning system using dual-arm robotics to preserve cultural heritage artifacts.
+                </p>
+            </div>
+            <div class="text-gray-500 text-sm whitespace-nowrap sm:text-right">2025</div>
+            </div>
 
+            <div class="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+            <div class="flex-1">
+                <a href="https://ieeexplore.ieee.org/document/10704902" target="_blank" class="text-pink-500 font-semibold">
+                AAPOE: Automated Artifacts Position and Orientation Estimation
+                </a>
+                <div class="text-white-400">J. Ahmad, S. Frascella, F. Dassiè et al. – <span class="italic">MESA 2024</span></div>
+                <p class="text-gray-400 hidden md:block">
+                Novel method for estimating artifact orientation in cultural heritage using automated systems.
+                </p>
+            </div>
+            <div class="text-gray-500 text-sm whitespace-nowrap sm:text-right">2024</div>
+            </div>
+
+            <div class="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+            <div class="flex-1">
+                <a href="http://dspace.unive.it/handle/10579/22604" target="_blank" class="text-pink-500 font-semibold">
+                Machine Learning and Computer Vision in the Humanities
+                </a>
+                <div class="text-white-400">F. Dassiè – <span class="italic">Master's Thesis, Ca' Foscari</span></div>
+                <p class="text-gray-400 hidden md:block">
+                Exploring the intersection of machine learning and computer vision to advance humanities research.
+                </p>
+            </div>
+            <div class="text-gray-500 text-sm whitespace-nowrap sm:text-right">2022</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Work Experience Section -->
+    <section id="work-experience" class="max-w-5xl mx-auto mb-20 space-y-6">
+      <h2 class="text-3xl font-semibold text-center mb-10">Work Experience</h2>
+
+      <article class="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-10 bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg border-l-4 border-pink-700 hover:border-blue-400 transition">
+        <a href="https://www.ccht.iit.it/" target="_blank"><img
+          src="assets/ccht.png"
+          alt="CCHT Logo"
+          class="w-20 h-20 object-cover flex-shrink-0 ml-4 mr-12 invert"
+        /></a>
+        <div>
+          <h3 class="font-bold text-xl mb-1">Research Fellow at the Center for Cultural Heritage Technology (CCHT-IIT), Venice</h3>
+          <p class="text-sm text-gray-400 flex items-center gap-2 mb-3">
+            <i class="fas fa-calendar-alt"></i> March 2024 - March 2025
+          </p>
+          <p class="mb-2">
+            Application of computer vision techniques and robotics scripting to automate the scanning and analysis of cultural heritage artifacts, focusing on 3D reconstruction and data extraction.
+          </p>
+          <p class="text-sm text-gray-400">
+            <strong>Technologies used:</strong> Python, Robotics (UR, Robotiq), COLMAP, NerF/Gaussian Splatting, 3D Scanners and cameras (Artec, Polyga, Intel Realsense, Zivid), Genesis
+          </p>
+        </div>
+      </article>
+
+      <article class="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8 bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg border-l-4 border-pink-700 hover:border-blue-400 transition">
+        <a href="https://www.cini.it/en/" target="_blank"><img
+          src="assets/fgc.png"
+          alt="FGC Logo"
+          class="w-20 h-20 object-cover flex-shrink-0 ml-4 mr-12 invert"
+        /></a>
+        <div>
+          <h3 class="font-bold text-xl mb-1">Python Developer at Fondazione Giorgio Cini (ARCHiVe), Venice</h3>
+          <p class="text-sm text-gray-400 flex items-center gap-2 mb-3">
+            <i class="fas fa-calendar-alt"></i>February 2022 - February 2024
+          </p>
+          <p class="mb-2">
+            Development of a pipeline for the automated post-production of images of ancient books and documents, involving object detection and metadata recognition + extraction.
+          </p>
+          <p class="text-sm text-gray-400">
+            <strong>Technologies used:</strong> Python, Pytorch, Detectron2, OpenCV, Leaflet, Adobe Lightroom, RawTherapee, Canon cameras
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-gray-400 text-center py-6 mt-auto">
+    <p>&copy; 2025 Federico Dassiè</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script src="js/extra.js"></script>
+  <script src="js/particles_settings.js"></script>
 </body>
 </html>

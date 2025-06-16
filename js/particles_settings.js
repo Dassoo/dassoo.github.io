@@ -1,16 +1,16 @@
-function loadParticles(color) {
+function loadParticles() {
     particlesJS("particles-js", {
         particles: {
             number: { value: 60, density: { enable: true, value_area: 1000 } },
-            color: { value: color },
+            color: { value:  "#ff4081" }, // color
             shape: { type: "circle" },
             opacity: { value: 0.3, random: true },
-            size: { value: 2.5, random: true },
+            size: { value: 5, random: true },
             move: { enable: true, speed: 1, direction: "none", random: false, straight: false, out_mode: "out" },
             line_linked: {
                 enable: true,
                 distance: 150,
-                color: color,
+                color: "#ff4081",
                 opacity: 0.3,
                 width: 1
             }
@@ -22,21 +22,13 @@ function loadParticles(color) {
     });
 }
 
-function getCurrentTheme() {
-    return isLightMode ? "#000000" : "#ffffff";
-}
-
 function updateParticles() {
     document.getElementById("particles-js").innerHTML = ""; // Reset
-    loadParticles(getCurrentTheme());
+    loadParticles();
 }
 
 // Carica le particelle iniziali
 document.addEventListener("DOMContentLoaded", function () {
-    loadParticles(getCurrentTheme());
+    loadParticles();
 });
 
-// Ricarica le particelle quando si cambia modalità
-lightModeToggle.addEventListener("click", function () {
-    setTimeout(updateParticles, 0);
-});
